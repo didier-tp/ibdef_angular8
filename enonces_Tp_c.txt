@@ -1,0 +1,35 @@
+enonces de Tps possibles (partie "c")
+=====================================
+
+3a. nouveaux composants / angular
+revenir sur le projet "my-app" (angular) via un open folder de visual-studio-code
+relancer (si besoin) ng serve -o au sein d'un terminal (nouveau ou pas)
+Au sein d'un nouveau terminal de visual-studio-code 
+lancer les commandes suivantes:
+ng g component header
+ng g component footer
+ng g component basic
+se placer dans src/app/basic (cd) et lancer les commandes: 
+ng g component calculatrice
+ng g component tva
+Repérer dans src/app/header/header.ts la valeur app-header du sélecteur
+Ajouter les sous composants <app-header></...> <app-basic></...> <app-footer></...>
+dans app.component.html
+De la même façon ajouter les sous-sous-composants calculatrice et tva
+dans src/app/basic/basic.component.html
+Modifier éventuellement certaines couleurs de fond (....scss) pour bien
+distinguer les sous-composants (http://localhost:4200) .
+
+3b.
+coder le composant calculatrice.component (.ts, .html) en même temps que le formateur
+( exemple expliqué)
+coder (seul) le composant tva.component (.ts, .html, ...) à peu près de la même façon
+variantes (possibles/faculattives) sur tva.component:
+- choix du taux via liste déroulante (avec option basé sur *ngFor et listeTaux)
+- déclenchement du calcul via button ou bien (input) sur zone saisie ou bien
+  (change) sur liste déroulante (<select>) .
+- afficher (pour le fun) le montant ht en bleu si positif (ou rouge si négatif)
+
+
+
+
