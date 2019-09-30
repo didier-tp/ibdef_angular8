@@ -1,0 +1,2 @@
+https://github.com/didier-mycontrib/angular8plus (partie ng-bs4-app)
+https://github.com/didier-mycontrib/tp_node_js (partie backend-tp-api)
