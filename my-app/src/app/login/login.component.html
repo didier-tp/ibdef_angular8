@@ -9,13 +9,26 @@
       </div>
     </div>
 
-    password : <input [(ngModel)]="login.password" 
-    name="password" required /> <br/>
-    roles : <input [(ngModel)]="login.roles" name="roles" 
-    required /> <br/>
-    <input type="button" [disabled]="!formLogin.form.valid"
+    <div class="form-group row">
+        <label class="col-sm-4" >password :</label> 
+        <div class="col-sm-8">
+            <input [(ngModel)]="login.password"  name="password" required /> 
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4" >roles :</label>
+        <div class="col-sm-8"> 
+            <input [(ngModel)]="login.roles" name="roles"    required />
+        </div> 
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-8 offset-sm-4">
+       <input type="button" [disabled]="!formLogin.form.valid"
            class="btn btn-primary" 
            value="login" (click)="onLogin()" />
-           <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>  <br/>
+           <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+      </div>
+    </div>     
 </form>
 {{message}}
