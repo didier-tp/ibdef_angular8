@@ -1,12 +1,21 @@
 <p>login works!</p>
-<form #formLogin="ngForm" (mouseenter)="onFormInit()">
-    username : <input [(ngModel)]="login.username" 
-    name="username" required /> <br/>
+<form #formLogin="ngForm" (mouseenter)="onFormInit()"
+      class="form-horizontal"  >
+
+   <div class="form-group row">
+      <label class="col-sm-4" >username : </label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="login.username"  name="username" required /> 
+      </div>
+    </div>
+
     password : <input [(ngModel)]="login.password" 
     name="password" required /> <br/>
     roles : <input [(ngModel)]="login.roles" name="roles" 
     required /> <br/>
     <input type="button" [disabled]="!formLogin.form.valid"
-           value="login" (click)="onLogin()" /> <br/>
+           class="btn btn-primary" 
+           value="login" (click)="onLogin()" />
+           <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>  <br/>
 </form>
 {{message}}
