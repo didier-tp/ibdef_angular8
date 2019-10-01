@@ -1,9 +1,9 @@
 <p>login works!</p>
-<form #formLogin="ngForm">
+<form #formLogin="ngForm" (mouseenter)="onFormInit()">
     username : <input [(ngModel)]="login.username" 
     name="username" required /> <br/>
     password : <input [(ngModel)]="login.password" 
-    name="password"  required /> <br/>
+    name="password" required /> <br/>
     roles : <input [(ngModel)]="login.roles" name="roles" 
     required /> <br/>
     <input type="button" [disabled]="!formLogin.form.valid"

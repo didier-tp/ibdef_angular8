@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Login } from '../common/data/login';
+import { NgForm, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,6 +15,17 @@ export class LoginComponent implements OnInit {
 
   onLogin(){
      this.message="valeurs saisies=" + JSON.stringify(this.login);
+  }
+
+  @ViewChild("formLogin", { static : false})
+  form : NgForm;
+
+  /*  <form #formLogin="ngForm"   
+       (mouseenter)="onFormInit()" ....>  */ 
+  onFormInit(){
+      this.form.controls['password'].setValidators(    
+          [Validators.required ,   Validators.minLength(4) ]);
+      //...
   }
 
   constructor() { }
