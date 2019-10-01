@@ -1,0 +1,53 @@
+enonces de Tps possibles (partie "d")
+=====================================
+
+4a. Service commun pour partager données "utilisateur"
+créer le sous "folder" src/app/common/service pour bien ranger les services
+se placer dans src/app/common/service (cd) et générer un nouveau service
+via ng g service preferences .
+Au sein de PreferencesService, ajouter (en public) la propriété couleurFondPreferee
+(de type string) avec une valeur par défaut.
+Injecter le service "PreferencesServices" (en public) dans les constructeurs
+de HeaderComponent et FooterComponent.
+Faire en suite en sorte que l'on puisse changer la valeur de
+preferencesService.couleurFondPreferee (via liste déroulante ou autre)
+au sein de FooterComponent et que cette nouvelle valeur choisie
+soit utilisée en tant que couleur de fond de HeaderComponent .
+NB: ce tp pourra être ultérieurement amélioré via BehaviorSubject .
+
+4b. Récupération de la partie "backend-tp-api" (pour Tp "appels Ws REST")
+télécharger le zip de https://github.com/didier-mycontrib/tp_node_js
+et l'extraire dans un répertoire temporaire.
+Se placer dans le sous répertoire "backend-tp-api" et lancer la commande
+npm install pour télécharger les dépendances techniques dans node_modules
+lancer ensuite lancer_tsc.bat pour compiler ".ts" en ".js"
+lancer ensuite lancer_nodeJs_noDB.bat pour démarrer l'appli "backend-tp-api"
+en mode "sans base de données à préablement installer".
+Visualiser certains Web Services REST en mode get via l'URL
+http://localhost:8282/test-ws.
+NB: via l'url http://localhost:8282 on pourra accéder à un exemple d'application
+angular dont le code (généré par ng build --prod) a été fusionné avec la partie
+backend nodeJs/express de façon à tout télécharger depuis le même endroit (ici locahost:8282).
+
+
+4c. Service "DeviseService" pour récupérer des données
+- générer une nouvelle classe de données "Devise" dans src/app/common/data
+  structurer cette classe avec .code (string) , .name (string) , .change (number)
+- générer un nouveau service "DeviseService" dans src/app/common/service
+  via ng g service devise
+- générer (dans src/app) , un nouveau composant "ConversionComponent"
+  injecter le service "DeviseService" dans "ConversionComponent"
+- coder plusieurs versions successives de "DeviseService" et "ConversionComponent"
+  pour que l'on puisse effectuer des conversions de monnaies
+  en appelant certains web-services "REST" :
+    - pré-version a : simulation sans asynchronisme (tableau de devises)
+    - version b : simulation en asynchrone (via Observable<...>/of())
+    - version c : réel appel de WS-REST avec HttpClient
+                  et avec ng serve --proxy-config proxy.conf.json
+
+4d. Service "LoginService" pour appel HTTP en mode post et récupération token
+- générer un nouveau service "LoginService" dans src/app/common/service
+  via ng g service login
+- injecter ce service dans LoginComponent (du tp "validation formulaire")
+- utiliser "PostMan" pour ...
+  
