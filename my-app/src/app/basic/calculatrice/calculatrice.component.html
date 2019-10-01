@@ -3,4 +3,6 @@ x: <input  [(ngModel)]="x" /><br/>
 y: <input  [(ngModel)]="y" /><br/>
 <input type="button" value="add" (click)="onAddition()" /><br/>
 <input type="button" value="mult" (click)="onMultiplication()" /><br/>
+<input type="button" value="div" 
+        [disabled]="y==0" (click)="onDivision()" /><br/>
 resultat= {{res}}

@@ -19,6 +19,10 @@ export class CalculatriceComponent implements OnInit {
     this.res = this.x*this.y;
   }
 
+  onDivision(){
+    this.res = this.x/this.y;
+  }
+
   constructor() { }
 
   ngOnInit() {
