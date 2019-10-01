@@ -10,6 +10,7 @@ import { BasicComponent } from './basic/basic.component';
 import { CalculatriceComponent } from './basic/calculatrice/calculatrice.component';
 import { TvaComponent } from './basic/tva/tva.component';
 import { LoginComponent } from './login/login.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule ,
-    FormsModule
+    FormsModule,
+    TabsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
