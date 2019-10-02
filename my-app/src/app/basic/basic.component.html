@@ -7,5 +7,13 @@
        <tab heading="calculatrice">
             <app-calculatrice></app-calculatrice>
        </tab>
+       <tab heading="onglet 3">
+               <bsu-toggle-panel [title]="'panneau1'" >
+                    <div>contenu panneau 1</div>
+               </bsu-toggle-panel>
+               <bsu-toggle-panel title='panneau2' >
+                     <app-calculatrice></app-calculatrice>
+               </bsu-toggle-panel>
+       </tab>
     </tabset>
 </div>
