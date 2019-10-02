@@ -1,1 +1,9 @@
-<p>conversion works!</p>
+montant: <input [(ngModel)]="montant" /><br/>
+codeMonnaieSource: <select [(ngModel)]="codeMonnaieSource">
+    <option *ngFor="let d of listeDevises">{{d.code}}</option>
+</select> <br/>
+codeMonnaieCible: <select [(ngModel)]="codeMonnaieCible">
+        <option *ngFor="let d of listeDevises">{{d.code}}</option>
+</select> <br/>
+<input type="button" value="convertir" (click)="onConvertir()" /><br/>
+montantConverti = {{montantConverti}}

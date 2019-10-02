@@ -12,7 +12,7 @@ export class DeviseService {
     { code : 'USD' , name : 'Dollar' , change : 1},
     { code : 'GBP' , name : 'Livre' , change : 0.8} ,
     { code : 'JPY' , name : 'Yen' , change : 120}
-  ]
+  ];
 
   //public getDevises() : Observable<Devise[]> {
   public getDevises() : Devise[] {
