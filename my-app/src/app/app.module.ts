@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsUtilModule } from 'src/bs-util/bs-util.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ConversionComponent } from './conversion/conversion.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     CalculatriceComponent,
     TvaComponent,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ConversionComponent
   ],
   imports: [
     BrowserModule,
