@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Devise } from '../data/devise';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +15,14 @@ export class DeviseService {
     { code : 'JPY' , name : 'Yen' , change : 120}
   ];
 
-  //public getDevises() : Observable<Devise[]> {
-  public getDevises() : Devise[] {
-    return this.tabDevises;
+  public getDevises() : Observable<Devise[]> {
+    return of(this.tabDevises);
   }
 
-  //public convertir(...) Observable<number>{
-  public convertir(montant:number, codeSource : string , codeCible: string) : number{
-    return 1;
+
+  public convertir(montant:number,  codeSource : string , 
+                   codeCible: string) : Observable<number>{
+    return of(1);
   }
 
   constructor() { }

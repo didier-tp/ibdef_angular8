@@ -15,14 +15,22 @@ export class ConversionComponent implements OnInit {
   listeDevises : Devise[];
 
   onConvertir(){
-    this.montantConverti =
-    this.deviseService.convertir(this.montant, 
+      this.deviseService.convertir(this.montant, 
                                 this.codeMonnaieSource, 
-                                this.codeMonnaieCible);
+                                this.codeMonnaieCible)
+          .subscribe(
+            (res:number)=>{ this.montantConverti = res} ,
+            (err)=>{console.log(err); }
+          );
   }
 
   ngOnInit() {
-    this.listeDevises = this.deviseService.getDevises();
+    //this.listeDevises = this.deviseService.getDevises(); SYNCHRONE
+    //version ASYNCHRONE:
+    this.deviseService.getDevises().subscribe(
+         (tabDev:Devise[])=>{ this.listeDevises =tabDev; },
+         (err)=>{console.log(err); }
+    );
   }
 
   constructor(private deviseService : DeviseService) { 
