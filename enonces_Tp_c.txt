@@ -30,7 +30,7 @@ variantes (possibles/faculatives) sur tva.component:
    ou bien (input) sur zone saisie ou bien
   (change) sur liste déroulante (<select>) .
 - afficher (pour le fun) le montant ht en bleu si positif (ou rouge si négatif)
-  en utilisant la syntaxe [style.backround-color]="..."
+  en utilisant la syntaxe [style.color]="..."
   et/ou [style.class]="...." (+ classe de style coté .(s)css )
 
 3c. validations de formulaire (en mode "template-driven" puis éventuellement "model-driven")
@@ -60,6 +60,10 @@ suite facultative du Tp: coder une version de LoginComponent en mode
 "model driven / reactive form / form builder" ou bien une approche "mixte" .
  
 3d. ajout et utilisation de bootstrap css dans l'application angular:
+étudier éventuellement bootstrap en téléchargeant test_bootstrap.zip
+depuis l'url https://github.com/didier-mycontrib/test_bootstrap puis en extrayant
+le contenu de ce .zip dans un répertoire temporaire
+et en analysant les exemples de la partie bs4/index.html (et form-layout.html).
 npm install -s bootstrap
 npm install -s font-awesome
 ajuster/agrandir la partie "styles": [ ... ] de my-app/angular.json
@@ -118,5 +122,14 @@ bsu-util/bsu-toogle-panel/bsu-toggle-panel.component.css
 - revenir sur src/app.module.ts et ajouter BsUtilModule dans la partie imports .
 - utiliser ensuite <bsu-toggle-panel [title]="'...'" > ... </bsu-toggle-panel>
   dans src/app/basic/basic.component.html ou ailleurs .
+
+3j. première approche du routing angular (après avoir vu début chapitre routing)
+- générer un nouveau composant "welcome" (WelcomeComponent) de premier niveau
+- paramétrer quelques routes simples dans src/app-routing.module.ts
+  (ex: welcome/WelcomeComponent , basic/BasicComponent, login/LoginComponent)
+- (ré-)intégrer <router-outlet></router-outlet> dans app.component.html
+- ajouter quelques liens hypertextes dans src/app/header/header.commponent.html
+   de type <a [routerLink]="['/welcome']"> welcome</a> &nbsp;
+- tester le tout et supprimer d'éventuel doublon dans app.component.html
 
  
