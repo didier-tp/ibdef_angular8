@@ -1,5 +1,11 @@
 <p class="cfooter">footer -
     <select [(ngModel)]="humeur" (change)="onChangeHumeur()">
         <option *ngFor="let h of listeHumeurs">{{h}}</option>
+    </select> &nbsp;
+    couleurFond:<select [(ngModel)]="preferencesService.couleurFondPreferee" >
+        <option>yellow</option>
+        <option value="rgb(245, 173, 173)">red</option>
+        <option value="honeydew">green</option>
+        <option value="rgb(215, 228, 252)">blue</option>
     </select>
 </p>
