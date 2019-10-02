@@ -1,6 +1,13 @@
 <p> welcome to {{title}} </p>
+
+
+<!--
 <app-header></app-header>
+<app-header titre="super title , fixed value"></app-header>
+<app-header [titre]="'super titre fixe qui va bien'"></app-header>
+-->
+<app-header [titre]="title"></app-header>
 <app-basic></app-basic>
 <app-login></app-login>
-<app-footer></app-footer>
+<app-footer (changementHumeur)="onChangementHumeur($event)"></app-footer>
 <!-- <router-outlet></router-outlet> --> 

@@ -1,1 +1,5 @@
-<p>footer works!</p>
+<p class="cfooter">footer -
+    <select [(ngModel)]="humeur" (change)="onChangeHumeur()">
+        <option *ngFor="let h of listeHumeurs">{{h}}</option>
+    </select>
+</p>

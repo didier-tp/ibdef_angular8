@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+
+  onChangementHumeur(evt:any){
+    let message = "changementHumeur:" + evt.value;
+    console.log(message);
+    alert(message);
+  }
 }
