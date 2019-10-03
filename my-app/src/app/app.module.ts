@@ -15,7 +15,8 @@ import { BsUtilModule } from 'src/bs-util/bs-util.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ConversionComponent } from './conversion/conversion.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowseProductsComponent } from './browse-products/browse-products.component'; 
+import { BrowseProductsComponent } from './browse-products/browse-products.component';
+import { ProdListComponent } from './browse-products/prod-list/prod-list.component'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BrowseProductsComponent } from './browse-products/browse-products.compo
     LoginComponent,
     WelcomeComponent,
     ConversionComponent,
-    BrowseProductsComponent
+    BrowseProductsComponent,
+    ProdListComponent
   ],
   imports: [
     BrowserModule,

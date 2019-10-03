@@ -3,3 +3,6 @@
    <li *ngFor="let c of listeCategories"
         (click)="onSelectCategory(c)">{{c}}</li>
 </ul>
+<hr/>
+<router-outlet></router-outlet> <!-- sous sous composant selon 
+                             config children des routes -->
