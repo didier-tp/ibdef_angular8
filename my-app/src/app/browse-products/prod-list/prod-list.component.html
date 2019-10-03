@@ -1,1 +1,7 @@
-<p>prod-list works!</p>
+<p>liste des produits:</p>
+<table border="1">
+    <tr *ngFor="let p of tabProduits">
+        <td>{{p.label}}</td>
+        <td>{{p.price}}</td>
+    </tr>
+</table>
