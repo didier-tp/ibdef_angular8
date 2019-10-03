@@ -4,6 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { BasicComponent } from './basic/basic.component';
 import { LoginComponent } from './login/login.component';
 import { ConversionComponent } from './conversion/conversion.component';
+import { BrowseProductsComponent } from './browse-products/browse-products.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   {  path: '',  redirectTo: '/welcome',  pathMatch: 'full'}, 
   { path: 'basic',  component: BasicComponent },
   { path: 'login',  component: LoginComponent },
-  { path: 'conversion',  component: ConversionComponent }
+  { path: 'conversion',  component: ConversionComponent },
+  { path: 'browse-products',  component: BrowseProductsComponent }
 ];
 
 @NgModule({

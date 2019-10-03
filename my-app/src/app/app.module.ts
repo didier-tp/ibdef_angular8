@@ -14,7 +14,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsUtilModule } from 'src/bs-util/bs-util.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ConversionComponent } from './conversion/conversion.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { BrowseProductsComponent } from './browse-products/browse-products.component'; 
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     TvaComponent,
     LoginComponent,
     WelcomeComponent,
-    ConversionComponent
+    ConversionComponent,
+    BrowseProductsComponent
   ],
   imports: [
     BrowserModule,

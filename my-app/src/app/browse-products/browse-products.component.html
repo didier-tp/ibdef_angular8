@@ -1,0 +1,5 @@
+<p>catégorie de produits:</p>
+<ul>
+   <li *ngFor="let c of listeCategories"
+        (click)="onSelectCategory(c)">{{c}}</li>
+</ul>
