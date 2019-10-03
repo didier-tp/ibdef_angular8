@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class TraductionService {
 
-  private _langue : string ="us"; //par defaut (autres valeurs : "fr" , "de" , "it" , "es" , ...)
+  private _langue : string ="en"; //par defaut (autres valeurs : "fr" , "de" , "it" , "es" , ...)
   private _currentTrad : any  ;
 
-  tradUs = {
+  tradEn = {
     hello : "hello",
     goodbye : "goodbye"
   }
@@ -26,7 +26,7 @@ export class TraductionService {
             break;
           case "en":
           default:
-            this._currentTrad = this.tradFr;
+            this._currentTrad = this.tradEn;
        }
   }
 
@@ -34,7 +34,11 @@ export class TraductionService {
       return this._currentTrad;
   }
 
+  public get langue() : string{
+    return this._langue;
+}
+
   constructor() {
-    this._currentTrad = this.tradUs;
+    this._currentTrad = this.tradEn;
    }
 }

@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService : LoginService,
               private _router : Router) { }
-
   onLogin(){
      //this.message="valeurs saisies=" + JSON.stringify(this.login);
      this.loginService.postLogin(this.login)
@@ -31,9 +30,7 @@ export class LoginComponent implements OnInit {
                 },
                (err)=>{console.log(err); }
          );
-         
   }
-
   private naviguerVersBasicSiLoginOk(LoginResponse: LoginResponse){
       if(LoginResponse.status){
           let link = [ '/basic'];
