@@ -13,6 +13,6 @@ taux : <select [(ngModel)]="taux"
 <!-- <input type="button" value="calculer tva et ttc"
        (click)="onCalculerTva()" /> -->
 
-<p>tva = {{tva}}</p>
+<p>tva = {{tva | number:'1.0-2'}}</p>
 <p>ttc = {{ttc}}</p>
 

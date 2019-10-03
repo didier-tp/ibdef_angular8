@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { PreferencesService } from '../common/service/preferences.service';
+import { TraductionService } from '../common/service/traduction.service';
 
 @Component({
   selector: 'app-footer',
@@ -18,7 +19,8 @@ export class FooterComponent implements OnInit {
     this.changementHumeur.emit({value:this.humeur});
   }
 
-  constructor(public preferencesService : PreferencesService) {
+  constructor(public preferencesService : PreferencesService,
+              public traductionService : TraductionService) {
     //injection de dépendance automatique de this.preferencesService
   }
 
