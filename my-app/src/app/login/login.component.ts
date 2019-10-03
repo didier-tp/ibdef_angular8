@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Login } from '../common/data/login';
 import { NgForm, Validators } from '@angular/forms';
+import { LoginService } from '../common/service/login.service';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
       //...
   }
 
-  constructor() { }
+  constructor(private loginService : LoginService) { }
 
   ngOnInit() {
   }
