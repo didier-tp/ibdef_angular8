@@ -4,6 +4,15 @@ import { Observable, of } from 'rxjs';
 import { map} from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
+//exemple de réponse : {"source":"EUR","target":"USD","amount":200,"result":219.78021978021977}
+//le type "ConvResponse" qui est plus precis que "object" lui meme plus précis que "any"
+export interface ConvResponse {
+    source : string; //ex: "EUR" ou "USD"
+    target : string;
+    amount : number;
+    result : number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +25,9 @@ export class DeviseService {
     //return of(1); //pré-version (simulation)
     //http://localhost:8282/devise-api/public/convert?source=EUR&target=USD&amount=200
     let url=`devise-api/public/convert?source=${codeSource}&target=${codeCible}&amount=${montant}`;
-    return this.http.get<any>(url)
+    //types typescript: any (très vague) , object : objet quelconque 
+    //                  classe précise (ou interface précise)
+    return this.http.get<ConvResponse>(url)
                 .pipe(
                     map( (convResponse)=> { return convResponse.result; })
                 );
