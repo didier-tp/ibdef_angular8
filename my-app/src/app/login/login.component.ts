@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Login } from '../common/data/login';
 import { NgForm, Validators } from '@angular/forms';
 import { LoginService } from '../common/service/login.service';
+import { LoginResponse } from '../common/data/loginResponse';
 
 
 @Component({
@@ -14,8 +15,18 @@ export class LoginComponent implements OnInit {
   login : Login  = new Login();
   message : string;
 
+  constructor(private loginService : LoginService) { }
+
   onLogin(){
-     this.message="valeurs saisies=" + JSON.stringify(this.login);
+     //this.message="valeurs saisies=" + JSON.stringify(this.login);
+     this.loginService.postLogin(this.login)
+         .subscribe(
+               (loginResponse : LoginResponse)=>{
+                     console.log(JSON.stringify(loginResponse));
+                     this.message = loginResponse.message;
+                },
+               (err)=>{console.log(err); }
+         )
   }
 
   @ViewChild("formLogin", { static : false})
@@ -29,7 +40,7 @@ export class LoginComponent implements OnInit {
       //...
   }
 
-  constructor(private loginService : LoginService) { }
+  
 
   ngOnInit() {
   }
