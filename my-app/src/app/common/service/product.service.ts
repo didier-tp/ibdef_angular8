@@ -13,7 +13,32 @@ export class ProductService {
 
   constructor(private onlineOfflineService : OnlineOfflineService) { 
     this.initMyIdbSampleContent(); 
+    this.onlineOfflineService.connectionChanged.subscribe(
+      (onLine) => { /*if(onLine) { this.getAllProductsPromise().then(
+                                 (listeProd)=>{ alert(JSON.stringify(listeProd));}
+                                   ); 
+                                  }*/
+                    this.actionSurProduitsSelonOnLine(onLine);
+                  }
+    )
   }
+  /*
+  actionSurProduitsSelonOnLine(onLine:boolean){
+    if(onLine) { this.getAllProductsPromise().then(
+                        (listeProd)=>{ alert(JSON.stringify(listeProd));}
+                      );
+               }
+  }*/
+
+  async actionSurProduitsSelonOnLine(onLine:boolean){
+    if(onLine) { 
+               let listeProd = await this.getAllProductsPromise();
+                alert(JSON.stringify(listeProd));
+               }
+  }
+
+
+
 
   public getProducts() : Observable<Product[]> {
     return from(this.getAllProductsPromise());//from() to convert Promise to Observable
