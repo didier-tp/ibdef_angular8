@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { PreferencesService } from '../common/service/preferences.service';
 import { TraductionService } from '../common/service/traduction.service';
+import { OnlineOfflineService } from '../common/service/online-offline.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,7 @@ import { TraductionService } from '../common/service/traduction.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
+  onLine: boolean;
   humeur : string = "bonneHumeur"; //par défaut
   listeHumeurs : string[] = [ "bonneHumeur", "mauvaiseHumeur"] ;
 
@@ -20,12 +21,15 @@ export class FooterComponent implements OnInit {
   }
 
   constructor(public preferencesService : PreferencesService,
+              public onlineOfflineService : OnlineOfflineService,
               public traductionService : TraductionService) {
     //injection de dépendance automatique de this.preferencesService
   }
 
 
   ngOnInit() {
+    this.onlineOfflineService.connectionChanged
+        .subscribe( (onLine)=>{this.onLine = onLine;})
   }
 
 }
