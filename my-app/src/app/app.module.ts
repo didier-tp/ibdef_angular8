@@ -17,6 +17,7 @@ import { ConversionComponent } from './conversion/conversion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowseProductsComponent } from './browse-products/browse-products.component';
 import { ProdListComponent } from './browse-products/prod-list/prod-list.component'; 
+import { AdminProdIdbComponent } from './admin-prod-idb/admin-prod-idb.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProdListComponent } from './browse-products/prod-list/prod-list.compone
     WelcomeComponent,
     ConversionComponent,
     BrowseProductsComponent,
-    ProdListComponent
+    ProdListComponent,
+    AdminProdIdbComponent
   ],
   imports: [
     BrowserModule,
