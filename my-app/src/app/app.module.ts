@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowseProductsComponent } from './browse-products/browse-products.component';
 import { ProdListComponent } from './browse-products/prod-list/prod-list.component'; 
 import { AdminProdIdbComponent } from './admin-prod-idb/admin-prod-idb.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AdminProdIdbComponent } from './admin-prod-idb/admin-prod-idb.component
     ConversionComponent,
     BrowseProductsComponent,
     ProdListComponent,
-    AdminProdIdbComponent
+    AdminProdIdbComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
